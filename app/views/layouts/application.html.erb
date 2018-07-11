@@ -17,6 +17,14 @@
   </head>
 
   <body>
+    <% alert %>
+    <% notice %>
+    <% if logged? %>
+    <b>Bienvenido: </b><%= current_user.name %>
+    <%= link_to 'Salir', session_path(current_user), method: :delete %>
+    <% else %>
+    El usuario no ha ingresado
+    <% end %>
     <%= render 'shared/navbar' %>
     <div class="container">
       <% if notice %>
